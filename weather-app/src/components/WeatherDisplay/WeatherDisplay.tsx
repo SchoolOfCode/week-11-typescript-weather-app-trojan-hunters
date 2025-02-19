@@ -10,10 +10,20 @@ interface WeatherDisplayProps {
     hourly_units: {
       time: string;
       temperature_2m: string;
+      precipitation: string;
+      pressure_msl: string;
+      wind_speed_10m: string;
+      wind_direction_10m: string;
+      wind_gusts_10m: string;
     };
     hourly: {
       time: number[]; // Array of Unix timestamps
       temperature_2m: number[]; // Array of temperatures in °C
+      precipitation: number[]; // Array of precipitation values
+      pressure_msl: number[]; // Array of pressure values in hPa
+      wind_speed_10m: number[]; // Array of wind speeds in km/h
+      wind_direction_10m: number[]; // Array of wind directions in degrees
+      wind_gusts_10m: number[]; // Array of wind gusts in km/h
     };
   };
 }
@@ -23,7 +33,17 @@ export default function WeatherDisplay({
 }: WeatherDisplayProps): JSX.Element {
   return (
     <div>
-      <h1>{`The temperature in London is ${display.hourly.temperature_2m[0]}`}</h1>
+      <p>{`The temperature in London is ${display.hourly.temperature_2m[0]} ${display.hourly_units.temperature_2m}`}</p>
+      <p>{`The precipitation in London is ${display.hourly.precipitation[0]} ${display.hourly_units.precipitation}`}</p>
+
+      <p>{`The pressure in London is ${display.hourly.pressure_msl[0]} ${display.hourly_units.pressure_msl}`}</p>
+      <p>{`The wind speed in London is ${display.hourly.wind_speed_10m[0]} ${display.hourly_units.wind_speed_10m}`}</p>
+
+      <p>{`The wind direction in London is ${display.hourly.wind_direction_10m[0]} ${display.hourly_units.wind_direction_10m}`}</p>
+      <p>{`The wind gusts in London is ${display.hourly.wind_gusts_10m[0]} ${display.hourly_units.wind_gusts_10m}`}</p>
+
+
+
     </div>
   );
 }
