@@ -1,5 +1,6 @@
 import Header from "./components/Header/Header";
 import Button from "./components/Button/Button";
+import WeatherDisplay from "./components/WeatherDisplay/WeatherDisplay";
 import { useState } from "react";
 
 // store weather data in a state, to be passed down to weather display component as a prop
@@ -57,8 +58,9 @@ function App() {
 
   return (
     <>
-      <Button onClick={fetchWeatherData} />
       <Header />
+      <Button onClick={fetchWeatherData} />
+      {weatherData && <WeatherDisplay display={weatherData} />}
     </>
   );
 }
