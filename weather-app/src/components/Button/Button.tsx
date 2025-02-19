@@ -30,6 +30,8 @@ export default function Button(): JSX.Element {
       console.log("It fired");
       const apiResult = await data.json();
       console.log(apiResult);
+      //  apiResult.hourly.temperature_2m[0] - This one for temperature
+      //apiResult.hourly_units.temperature_2m - This one for unit
       return apiResult;
     } catch {
       console.error("Error fetching");
