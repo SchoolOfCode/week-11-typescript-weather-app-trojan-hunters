@@ -33,17 +33,12 @@ export default function WeatherDisplay({
 }: WeatherDisplayProps): JSX.Element {
   return (
     <div>
-      <p>{`The temperature in London is ${display.hourly.temperature_2m[0]} ${display.hourly_units.temperature_2m}`}</p>
-      <p>{`The precipitation in London is ${display.hourly.precipitation[0]} ${display.hourly_units.precipitation}`}</p>
-
-      <p>{`The pressure in London is ${display.hourly.pressure_msl[0]} ${display.hourly_units.pressure_msl}`}</p>
-      <p>{`The wind speed in London is ${display.hourly.wind_speed_10m[0]} ${display.hourly_units.wind_speed_10m}`}</p>
-
-      <p>{`The wind direction in London is ${display.hourly.wind_direction_10m[0]} ${display.hourly_units.wind_direction_10m}`}</p>
-      <p>{`The wind gusts in London is ${display.hourly.wind_gusts_10m[0]} ${display.hourly_units.wind_gusts_10m}`}</p>
-
-
-
+      <p>{`The temperature is ${display.hourly.temperature_2m[0]} ${display.hourly_units.temperature_2m}`}</p>
+      <p>{`The precipitation is ${display.hourly.precipitation[0]} ${display.hourly_units.precipitation}`}</p>
+      <p>{`The pressure is ${display.hourly.pressure_msl[0]} ${display.hourly_units.pressure_msl}`}</p>
+      <p>{`The wind speed is ${display.hourly.wind_speed_10m[0]} ${display.hourly_units.wind_speed_10m}`}</p>
+      <p>{`The wind direction is ${display.hourly.wind_direction_10m[0]} ${display.hourly_units.wind_direction_10m}`}</p>
+      <p>{`The wind gustsis ${display.hourly.wind_gusts_10m[0]} ${display.hourly_units.wind_gusts_10m}`}</p>
     </div>
   );
 }
